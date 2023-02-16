@@ -132,4 +132,4 @@ dmypy.json
 .vscode
 
 # LaTeX
-.tex
+*.tex
