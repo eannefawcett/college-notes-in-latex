@@ -1,3 +1,11 @@
+import os
+data_path = 'C://Users/eannefawcett/Desktop/Data Science/Projects/data/college-notes-in-latex/'
+raw_path = data_path + 'raw/'
+interim_path = data_path + 'interim/'
+processed_path = data_path + 'processed/'
+project_path = 'C://Users/eannefawcett/Desktop/Data Science/Projects/college-notes-in-latex/'
+report_path = project_path + 'reports/'
+
 import numpy as np
 from pylatex import Document, Section, Subsection, Tabular, \
     Math, TikZ, Axis, Plot, Figure, Matrix, Alignat
