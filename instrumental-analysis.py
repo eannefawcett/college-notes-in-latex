@@ -16,6 +16,8 @@ geometry_options = {"tmargin": "2.54cm", "bmargin": "2.54cm", \
                     "lmargin": "2.54cm", "rmargin": "2.54cm"}
 doc = Document(geometry_options=geometry_options)
 
+#\DeclareMathSymbol{\electron}{\mathord}{svrsymbols}{`a}
+
 doc.preamble.append(Command('title','Instrumental Analysis'))
 doc.preamble.append(Command('author','Beth Fawcett'))
 doc.preamble.append(Command('date', NoEscape('Spring 2014')))
@@ -34,7 +36,7 @@ with doc.create(Section('Direct Current')):
      with doc.create(Subsection('Current')):
           with doc.create(Itemize()) as current:
                current.add_item('Flow of electrical charge')
-               current.add_item('I = \dfrac{d \mathrm{Q}} {d \mathrm{t}}')
+               current.add_item('\begin{equation}I = \dfrac{d \mathrm{Q}} {d \mathrm{t}}\end{equation}')
                current.add_item('\tWhere \mathrm{I} is current, \mathrm{Q} is charge, and \mathrm{t} is time')
                current.add_item('Direction is conventionally flow of POSITIVE charge')
                current.add_item('Measure in Amps where \mathrm{A} = \dfrac{\mathrm{C}}{\mathrm{s}} = \SI{6.25e18}{\frac{\electron}{\mathrm{s}}}')
@@ -101,4 +103,4 @@ with doc.create(Section('Direct Current')):
 ## 9) Go to tutoring/recitation
 
 doc.generate_pdf('full', clean_tex=False)
-#subprocess.call(["latexmk, full.tex"])
+subprocess.call(["latexmk -pdf, full.tex"])
