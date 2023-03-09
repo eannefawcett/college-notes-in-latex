@@ -133,3 +133,6 @@ dmypy.json
 
 # LaTeX
 *.tex
+*.aux
+*.fdb_latexmk
+*.fls
